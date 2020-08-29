@@ -1,0 +1,85 @@
+
+$color:black;
+$back:#f2f2f0;
+$blue:#007CBA;
+body{
+  p{
+    color:white;
+  }
+}
+
+@media screen and (min-width: 450px) {     /* desktop*/
+  .box{
+    margin-right:100px;
+    margin-left: auto;
+    margin-top:60px;
+    margin-bottom: 20px;
+    width:30%;
+  }
+  .background_pic{
+    background-image: url("assets/bg.jpg");
+    height: 585px;
+  }
+}
+
+
+@media screen and (max-width: 451px) {      /* mobile*/
+  .box{
+    margin-right:auto;
+    margin-left: auto;
+    margin-top:220px;
+    margin-bottom: 20px;
+    width:80%;
+  }
+  .background_pic{
+    min-height: 850px;
+    background-image: url("assets/mobg.jpg");
+  }
+}
+
+.background_pic{
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top:50px;
+}
+.box{
+  border-radius: 10px;
+  border: 2px solid $blue;
+  padding-bottom: 20px;
+  background-color: #fff;
+
+button{
+  padding:7px;
+  border-radius: 7px;
+  background-color: $blue;
+}
+
+  h3,p,a{
+    color: $color;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 25px;
+  }
+  h6{
+    color:$blue;
+    text-align: center;
+    padding:5px;
+  }
+  input[type=text],input[type=password], input[type=email]{
+  width: 80%;
+  padding: 12px;
+  border: 1px solid $blue;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: $back;
+  text-decoration: none;
+  color:$color;
+}
+::placeholder {
+  color: $color;
+}
+}

@@ -1,0 +1,9 @@
+Flask
+Flask-Session
+psycopg2-binary
+SQLAlchemy
+Flask-Bootstrap
+jsonify
+psycopg2
+requests
+Werkzeug

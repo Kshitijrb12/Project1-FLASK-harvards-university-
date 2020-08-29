@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>THE_BOOKS_PARK:Account</title>
+    <link rel="icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" type="image/x-icon" sizes="16x16">
+    <link rel="stylesheet" href="{{ url_for('static', filename='review.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+  </head>
+  <body>
+    <div class="back">
+      <div class="sticky">
+              <ul>
+                <form action="{{ url_for('logout') }}" method="post" style="margin:0px;">
+                  <li style="float:right;"><button type="submit" style=" border: none;text-decoration: none;  background-color: #111;color:#fff;">Logout</button></li>
+                </form>
+                <li style="float:right;color:#fff;margin:7px 15px 7px 7px;">Hi! {{us}}</li>
+              </ul>
+      </div>
+
+      <div class="jumbotron" style="background-color:rgba(0, 133, 186, 0.3);margin-top:50px;margin-right:30px;margin-left:30px;">
+        <div class="row" style="text-align: center;">
+            <h1 style="text-align:center;margin-left:auto;margin-right:auto;margin-bottom:50px;text-shadow: 2px 2px 4px #000000;">"{{bookdetail.title}}"</h1>
+        </div>
+
+
+        <div class="row" style="text-align: center;">
+          <div class="col-4">
+            <p>ISBN:</p>
+            <p style="color:#007CBA"><i>{{bookdetail.isbn}}</i></p>
+          </div>
+          <div class="col-4">
+            <p>AUTHOR: </p>
+            <p style="color:#007CBA"><i>{{bookdetail.author}}</i></p>
+          </div>
+          <div class="col-4">
+            <p>YEAR:</p>
+            <p style="color:#007CBA"><i>{{bookdetail.year}}</i></p>
+          </div>
+        </div>
+
+
+        <div class="row" style="margin-top:50px;text-align: center;">
+          <div class="col-6">
+            <p style="text-align:center;margin-left:auto;margin-right:auto;">AVG RATING:<i style="color:#007CBA"> {{res.average_rating}}</i></p>
+          </div>
+          <div class="col-6">
+            <p style="text-align:center;margin-left:auto;margin-right:auto;">NO. OF RATING:<i style="color:#007CBA"> {{res.work_ratings_count}}</i></p>
+          </div>
+        </div>
+
+        <hr>
+        <p style="text-align:center;margin-right:auto;margin-left:auto;color:red;font-size:20px;">{{message}}</p>
+          <form action="/review/{{bookdetail.id_book}}" method="POST">
+            <label for="" style="margin-top: 30px;">LEAVE YOUR REVIEW:</label>
+            <center><input type="text" name="review" placeholder="ENTER YOUR REVIEW"></center>
+
+            <label for="" style="margin-top: 10px;">LEAVE YOUR RATE:</label>
+             <!-- <div class="star-rating"> -->
+                <input type="radio" name="rating" value="1" />
+                <label for="5-stars" class="star">&#9733;</label>
+                <input type="radio" name="rating" value="2" />
+                <label for="4-stars" class="star">&#9733;</label>
+                <input type="radio" name="rating" value="3" />
+                <label for="3-stars" class="star">&#9733;</label>
+                <input type="radio" name="rating" value="4" />
+                <label for="2-stars" class="star">&#9733;</label>
+                <input type="radio" name="rating" value="5" />
+                <label for="1-star" class="star">&#9733;</label>
+              <!-- </div> -->
+              <button type="submit" name="button" style=" border: none;margin-top:20px;">SUBMIT</button>
+          </form>
+        <hr style="margin-top:30px;">
+
+        {% for rev_username, review, rating in revi %}
+        <div class="box" style="margin-bottom:20px;">
+          <div class="row">
+          <div class="col-6">
+            <p style="float:left;font-size: 20px;">{{rev_username}}:</p>
+          </div>
+          <div class="col-6">
+            <p style="float:right;font-size: 20px;"><b style="color:#fc0;">&#9733; &#9733; &#9733; &#9733; &#9733; </b>: {{rating}} </p>
+          </div>
+          </div>
+          <p><i> {{review}} </i></p>
+        </div>
+        {% else %}
+      <h5 style="color:red;;margin-left:auto;margin-right:auto;text-align:center;">&#57430; Be The First One To Review This Book! &#57430;</h5>
+        {% endfor %}
+
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  </body>
+</html>

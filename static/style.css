@@ -1,0 +1,66 @@
+body p {
+  color: white; }
+
+@media screen and (min-width: 450px) {
+  /* desktop*/
+  .box {
+    margin-right: 100px;
+    margin-left: auto;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    width: 30%; }
+
+  .background_pic {
+    background-image: url("assets/bg.jpg");
+    height: 585px; } }
+@media screen and (max-width: 451px) {
+  /* mobile*/
+  .box {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 220px;
+    margin-bottom: 20px;
+    width: 80%; }
+
+  .background_pic {
+    min-height: 850px;
+    background-image: url("assets/mobg.jpg"); } }
+.background_pic {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 50px; }
+
+.box {
+  border-radius: 10px;
+  border: 2px solid #007CBA;
+  padding-bottom: 20px;
+  background-color: #fff; }
+  .box button {
+    padding: 7px;
+    border-radius: 7px;
+    background-color: #007CBA; }
+  .box h3, .box p, .box a {
+    color: black;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 25px; }
+  .box h6 {
+    color: #007CBA;
+    text-align: center;
+    padding: 5px; }
+  .box input[type=text], .box input[type=password], .box input[type=email] {
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #007CBA;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f2f2f0;
+    text-decoration: none;
+    color: black; }
+  .box ::placeholder {
+    color: black; }
+
+/*# sourceMappingURL=style.css.map */

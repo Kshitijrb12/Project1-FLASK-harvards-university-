@@ -1,0 +1,14 @@
+{% extends "structure.html" %}
+
+{% block title %} THE_BOOKS_PARK:LOGIN {% endblock %}
+
+{% block form %}
+<h3>LOGIN</h3>
+<h6>{{message}}<h6>
+<form action="{{ url_for('login') }}" method="post">
+  <center><input type="text" name="user" placeholder="ENTER USERNAME" required></center>
+  <center><input type="password" name="passw" placeholder="ENTER PASSWORD" required></center>
+  <p><a href="{{ url_for('register') }}" style="text-decoration: none;">Create New Account</a></p>
+  <center><button type="submit" name="button" style=" border: none;">Login</button></center>
+</form>
+{% endblock %}

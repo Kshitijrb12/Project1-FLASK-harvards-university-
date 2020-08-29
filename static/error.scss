@@ -1,0 +1,41 @@
+$color:black;
+$back:#f2f2f0;
+$blue:#007CBA;
+
+.back{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  h1{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  h3{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
+
+
+@media screen and (min-width: 450px) {     /* desktop*/
+.back{
+  min-height: 585px;
+  background-image: url("assets/r1.jpg");
+  h1{
+    padding-top:250px;
+  }
+  }
+}
+
+
+@media screen and (max-width: 451px) {       /* mobile*/
+.back{
+  min-height: 850px;
+  background-image: url("assets/rm1.jpg");
+h1{
+  padding-top:120px;
+  }
+  }
+}
